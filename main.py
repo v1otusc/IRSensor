@@ -2,7 +2,7 @@
 '''
 Description: 
 LastEditors: zzh
-LastEditTime: 2023-04-04 18:55:56
+LastEditTime: 2023-04-06 16:03:25
 FilePath: /grill_tk/main.py
 '''
 
@@ -86,7 +86,7 @@ def btn_handle_connect():
             return
         share_proc_run_flag.put(True)
         get_data_handle = Process(target=recv_data.get_data, args=(
-            share_serial_port, share_IR_data, share_proc_run_flag))
+            share_serial_port, share_IR_data, share_proc_run_flag, share_success_queue))
         get_data_handle.start()
         button_connect['text'] = "disconnect"
 
